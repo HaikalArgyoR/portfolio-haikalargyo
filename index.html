@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haikal Argyo Ramdhan | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Quantum Background Animation -->
+    <div class="quantum-bg" id="quantumBg"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold neon-text">
+                    <span class="text-electric-blue">Haikal</span> <span class="text-purple">Argyo Ramdhan</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-item text-white hover:text-electric-blue transition">Home</a>
+                    <a href="#about" class="nav-item text-white hover:text-electric-blue transition">About</a>
+                    <a href="#projects" class="nav-item text-white hover:text-electric-blue transition">Projects</a>
+                    <a href="#skills" class="nav-item text-white hover:text-electric-blue transition">Skills</a>
+                    <a href="#gallery" class="nav-item text-white hover:text-electric-blue transition">Gallery</a>
+                    <a href="#contact" class="nav-item text-white hover:text-electric-blue transition">Contact</a>
+                </div>
+                
+                <button id="mobileMenuButton" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 bottom-0 w-64 bg-black bg-opacity-90 z-50 p-6">
+        <div class="flex justify-end">
+            <button id="closeMobileMenu" class="text-white focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        
+        <div class="mt-10 flex flex-col space-y-6">
+            <a href="#home" class="text-white text-xl hover:text-electric-blue transition">Home</a>
+            <a href="#about" class="text-white text-xl hover:text-electric-blue transition">About</a>
+            <a href="#projects" class="text-white text-xl hover:text-electric-blue transition">Projects</a>
+            <a href="#skills" class="text-white text-xl hover:text-electric-blue transition">Skills</a>
+            <a href="#gallery" class="text-white text-xl hover:text-electric-blue transition">Gallery</a>
+            <a href="#contact" class="text-white text-xl hover:text-electric-blue transition">Contact</a>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="pt-24">
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center section">
+            <div class="container mx-auto px-6 py-20">
+                <div class="text-center">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 neon-text">
+                        <span class="text-electric-blue">Portfolio</span> <span class="text-purple"></span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-gray-300">
+                        Exploring and developing intelligent solutions in the fields of control systems, microcontrollers, and the Internet of Things (IoT).
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center gap-6">
+                        <a href="#about" class="btn-neon px-8 py-3 rounded-full text-lg font-semibold text-center">
+                            About Me
+                        </a>
+                        <a href="#projects" class="btn-neon px-8 py-3 rounded-full text-lg font-semibold text-center">
+                            My Projects
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="py-20 section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 neon-text">
+                    <span class="text-electric-blue">About</span> <span class="text-purple">Me</span>
+                </h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 text-white">Haikal Argyo Ramdhan</h3>
+                        
+                        <div class="space-y-4 text-gray-300">
+                            <p>
+                                An Electrical Engineering student with high motivation and a strong foundation in control systems, microcontrollers, and data communication technology. Committed to leveraging innovative technological solutions to solve real-world problems and create an inclusive environment.
+                            </p>
+                            <p>
+                                Outside of academic activities and technical projects, I am active in various sports—especially calisthenics. I am continually driven to learn new things and broaden my skills to remain at the cutting edge of technological development.
+                            </p>
+                            <p>
+                                I hope that in the future I will be able to apply the knowledge I acquired during my studies in the 2023 Electrical Engineering undergraduate program at Universitas Siliwangi.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <button onclick="downloadCV()" class="btn-neon inline-flex items-center px-6 py-3 rounded-full">
+                                <i class="fas fa-download mr-2"></i>
+                                Download CV
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="relative w-full h-80 lg:h-96 bg-gradient-to-br from-electric-blue to-purple rounded-xl overflow-hidden">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <div class="text-center p-6">
+                                    <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-electric-blue mx-auto mb-4 overflow-hidden">
+                                        <img 
+                                            src="images/foto_profil.jpeg" 
+                                            alt="Haikal Argyo Ramdhan - Technologist & Innovator"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.onerror=null; this.src='fallback-image.jpg'"
+                                        >
+                                    </div>
+                                    <h4 class="text-xl font-bold text-white">Haikal Argyo Ramdhan</h4>
+                                    <p class="text-gray-300">Electrical & Control System Engineer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-black bg-opacity-50 section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 neon-text">
+                    <span class="text-electric-blue">My</span> <span class="text-purple">Projects</span>
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="project-card bg-gray-900 bg-opacity-70 rounded-xl p-6">
+                        <div class="text-electric-blue text-2xl mb-3">
+                            <i class="fas fa-bottle-water"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">FiMa23 (3D Filament Maker)</h3>
+                        <p class="text-gray-300 mb-4">
+                            FiMa23 is an innovative filament making machine for 3D printers, designed to be easy to operate and highly flexible. Its control core is built around a dual-core ESP32 module running an RTOS (Real-Time Operating System), allowing all processes—from extruder heating and temperature measurement to filament extrusion—to run in parallel without interruption. A precision-scale feedback system uses a digital temperature sensor at the extrusion head to ensure a consistently stable melt temperature, delivering uniform filament quality.
+                        </p>
+                        <div class="text-purple text-sm">
+                            <span class="bg-purple bg-opacity-20 px-2 py-1 rounded">Arduino IDE</span>
+                            <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">RTOS</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card bg-gray-900 bg-opacity-70 rounded-xl p-6">
+                        <div class="text-electric-blue text-2xl mb-3">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">EcoBoost (Organic waste processing device)</h3>
+                        <p class="text-gray-300 mb-4">
+                            A prototype Arduino based organic waste processing unit designed to automate the efficient crushing and fermentation of organic refuse. With a focus on temperature stability and material quality monitoring, EcoBoost ensures the decomposition process runs optimally to produce high-quality compost.
+                        </p>
+                        <div class="text-purple text-sm">
+                            <span class="bg-purple bg-opacity-20 px-2 py-1 rounded">Zero-Waste</span>
+                            <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">Arduino</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card bg-gray-900 bg-opacity-70 rounded-xl p-6">
+                        <div class="text-electric-blue text-2xl mb-3">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Trainer Board PLC and Pneumatik</h3>
+                        <p class="text-gray-300 mb-4">
+                            A comprehensive experimental apparatus specifically designed for industrial automation education at the vocational high-school level. Featuring modular, easy-to-assemble practice units, this device combines PLC-based control logic with pneumatic actuator circuits, allowing students to learn control concepts alongside real-world industrial applications.
+                        </p>
+                        <div class="text-purple text-sm">
+                            <span class="bg-purple bg-opacity-20 px-2 py-1 rounded">PLC</span>
+                            <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">Pneumatic</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card bg-gray-900 bg-opacity-70 rounded-xl p-6">
+                        <div class="text-electric-blue text-2xl mb-3">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Pneumatic Control Panel</h3>
+                        <p class="text-gray-300 mb-4">
+                            Engineered a modular control panel for industrial pneumatic systems with safety interlocks, 
+                            fault diagnostics, and touchscreen HMI interface.
+                        </p>
+                        <div class="text-purple text-sm">
+                            <span class="bg-purple bg-opacity-20 px-2 py-1 rounded">Electro-Pneumatics</span>
+                            <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">HMI</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="project-card bg-gray-900 bg-opacity-70 rounded-xl p-6">
+                        <div class="text-electric-blue text-2xl mb-3">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Portfolio Website</h3>
+                        <p class="text-gray-300 mb-4">
+                            Developed this responsive portfolio website using HTML, CSS, and JavaScript with a quantum-telecommunications 
+                            theme featuring custom animations and interactive elements.
+                        </p>
+                        <div class="text-purple text-sm">
+                            <span class="bg-purple bg-opacity-20 px-2 py-1 rounded">Web Dev</span>
+                            <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 neon-text">
+                    <span class="text-electric-blue"></span> <span class="text-purple">Skills</span>
+                </h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-white">Technical Skills</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-microchip text-electric-blue mr-3"></i>
+                                <span class="text-gray-300">Arduino IDE</span>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-industry text-electric-blue mr-3"></i>
+                                <span class="text-gray-300">Omron PLC</span>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-compress-arrows-alt text-electric-blue mr-3"></i>
+                                <span class="text-gray-300">Electro-Pneumatics</span>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-project-diagram text-electric-blue mr-3"></i>
+                                <span class="text-gray-300">Circuit Design & Simulation</span>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-code text-electric-blue mr-3"></i>
+                                <span class="text-gray-300">Web Development (HTML, CSS, JavaScript)</span>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <i class="fas fa-file-word text-electric-blue mr-3"></i>
+                                <span class="text-gray-300">Microsoft Word</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-white">Additional Skills</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-electric-blue">Soft Skills</h4>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-purple mr-2"></i>
+                                        Problem Solving
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-purple mr-2"></i>
+                                        Team Collaboration
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-purple mr-2"></i>
+                                        Self-Management
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-electric-blue">Languages</h4>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-language text-purple mr-2"></i>
+                                        Indonesian (Native)
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-language text-purple mr-2"></i>
+                                        English (Basic)
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-language text-purple mr-2"></i>
+                                        Japanese (Basic)
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-electric-blue">Interests</h4>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-robot text-purple mr-2"></i>
+                                        Robotics
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-bolt text-purple mr-2"></i>
+                                        Electric Vehicles
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-running text-purple mr-2"></i>
+                                        Sports
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-network-wired text-purple mr-2"></i>
+                                        IoT
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-black bg-opacity-50 section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 neon-text">
+                    <span class="text-electric-blue"></span> <span class="text-purple">Gallery</span>
+                </h2>
+                
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/gambar1.jpeg" alt="Workshop" class="w-full h-full object-cover">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">Sports Activity</h3>
+                                    <p class="text-gray-300">Staying active and maintaining work-life balance</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/gambar2.jpeg" alt="Graduation" class="w-full h-full object-cover">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">FiMa23</h3>
+                                    <p class="text-gray-300">The process of creating FiMa23 together with the team</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/gambar3.jpeg" alt="Team" class="w-full h-full object-cover">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">Team Workshop</h3>
+                                    <p class="text-gray-300">Collaborating with team members on a new project</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/foto_presentasi2.jpeg" alt="Presentation" class="w-full h-full object-cover">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">Project Presentation</h3>
+                                    <p class="text-gray-300">Demonstrated a vibration detection device at the ELCO (Electrical Control) community orientation event.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next text-electric-blue"></div>
+                    <div class="swiper-button-prev text-electric-blue"></div>
+                    
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 neon-text">
+                    <span class="text-electric-blue"></span> <span class="text-purple">Connection</span>
+                </h2>
+                
+                <div class="max-w-3xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-gray-900 bg-opacity-50 rounded-xl p-8">
+                            <h3 class="text-2xl font-bold mb-6 text-white">Get In Touch</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="text-electric-blue text-xl mr-4 mt-1">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white">Email</h4>
+                                        <a href="mailto:argyohaikal@gmail.com?subject=Halo%20Haikal" class="text-gray-300 hover:text-electric-blue transition">
+                                            argyohaikal@gmail.com
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="text-purple text-xl mr-4 mt-1">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white">WhatsApp</h4>
+                                        <a href="https://wa.me/6287892743037" target="_blank" class="text-gray-300 hover:text-electric-blue transition">
+                                            +62 878-9274-3037
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-900 bg-opacity-50 rounded-xl p-8">
+                            <h3 class="text-2xl font-bold mb-6 text-white">Social Links</h3>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <a href="https://www.instagram.com/haiklargyormdhn_/" target="_blank" class="flex items-center p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition">
+                                    <div class="text-xl mr-3 text-pink-500">
+                                        <i class="fab fa-instagram"></i>
+                                    </div>
+                                    <span class="text-white">Instagram</span>
+                                </a>
+                                
+                                <a href="https://www.linkedin.com/in/haikal-argyo-ramdhan-37406a319" target="_blank" class="flex items-center p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition">
+                                    <div class="text-xl mr-3 text-blue-400">
+                                        <i class="fab fa-linkedin"></i>
+                                    </div>
+                                    <span class="text-white">LinkedIn</span>
+                                </a>
+                                
+                                <a href="https://www.youtube.com/channel/UCXmDZubZeBvHJ716XnN1nxw" target="_blank" class="flex items-center p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition">
+                                    <div class="text-xl mr-3 text-red-500">
+                                        <i class="fab fa-youtube"></i>
+                                    </div>
+                                    <span class="text-white">YouTube</span>
+                                </a>
+                                
+                                <a href="https://github.com/HaikalArgyoR/" target="_blank" class="flex items-center p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition">
+                                    <div class="text-xl mr-3 text-gray-300">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                    <span class="text-white">GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-80 py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-xl font-bold neon-text mb-4 md:mb-0">
+                    <span class="text-electric-blue">Haikal</span> <span class="text-purple">Argyo Ramdhan</span>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-electric-blue transition">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-electric-blue transition">About</a>
+                    <a href="#projects" class="text-gray-400 hover:text-electric-blue transition">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-electric-blue transition">Contact</a>
+                </div>
+            </div>
+            
+            <div class="mt-6 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Haikal Argyo Ramdhan. All rights reserved.</p>
+                <p class="mt-2">Designed with quantum inspiration.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
