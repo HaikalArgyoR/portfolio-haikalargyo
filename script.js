@@ -13,17 +13,47 @@ const swiper = new Swiper('.swiper-container', {
         el: '.swiper-pagination',
         clickable: true,
     },
+    // Tambahkan ini
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: true
+            }
+        },
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 20
+        },
+        1024: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
+            }
+        }
+    },
+    preloadImages: false,
+    lazy: true,
+    watchSlidesProgress: true,
+    effect: 'slide',
+    speed: 500
 });
 
 // Quantum Particles
 const quantumBg = document.getElementById('quantumBg');
-for (let i = 0; i < 50; i++) {
-    const particle = document.createElement('div');
-    particle.classList.add('quantum-particle');
-    particle.style.left = `${Math.random() * 100}%`;
-    particle.style.top = `${Math.random() * 100}%`;
-    particle.style.animationDelay = `${Math.random() * 15}s`;
-    quantumBg.appendChild(particle);
+if (quantumBg && window.innerWidth > 768) {
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('quantum-particle');
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.animationDelay = `${Math.random() * 15}s`;
+        quantumBg.appendChild(particle);
+    }
 }
 
 // Custom Cursor
@@ -39,7 +69,8 @@ document.addEventListener('mousemove', (e) => {
         cursorFollower.style.top = `${e.clientY}px`;
     }, 100);
 
-    if (Math.random() > 0.95) {
+    // Nonaktifkan lightning effect di mobile
+    if (window.innerWidth > 768 && Math.random() > 0.95) {
         createLightning(e.clientX, e.clientY);
     }
 });
