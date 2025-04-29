@@ -221,3 +221,35 @@ body {
         cursor: default;
     }
 }
+
+@media (max-width: 768px) {
+    .swiper-container {
+        overflow: hidden;
+    }
+    
+    .swiper-slide {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        will-change: transform;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+    
+    .quantum-particle {
+        display: none !important;
+    }
+    
+    .lightning {
+        display: none !important;
+    }
+}
+
+/* Optimasi gambar */
+.swiper-slide img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
