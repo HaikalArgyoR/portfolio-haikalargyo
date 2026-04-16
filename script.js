@@ -1,81 +1,121 @@
-// Swiper Initialization
-const swiper = new Swiper('.swiper-container', {
+// Swiper Initialization - Certificate Section
+const certificateSwiper = new Swiper('#certificateSwiper', {
     loop: true,
+    grabCursor: true,
+    preventClicks: false,
+    preventClicksPropagation: false,
+    slideToClickedSlide: false,
     autoplay: {
         delay: 3000,
         disableOnInteraction: false,
+        waitForTransition: true,
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '#certNextBtn',
+        prevEl: '#certPrevBtn',
     },
     pagination: {
-        el: '.swiper-pagination',
+        el: '#certPagination',
         clickable: true,
+        dynamicBullets: true,
     },
-    // Tambahkan ini
+    keyboard: true,
+    speed: 800,
+    spaceBetween: 0,
     breakpoints: {
         320: {
             slidesPerView: 1,
-            spaceBetween: 10,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: true
-            }
         },
         768: {
             slidesPerView: 1,
-            spaceBetween: 20
         },
-        1024: {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false
-            }
-        }
     },
-    preloadImages: false,
-    lazy: true,
-    watchSlidesProgress: true,
-    effect: 'slide',
-    speed: 500
 });
 
-// Quantum Particles
+// Swiper Initialization - Gallery Section
+const gallerySwiper = new Swiper('#gallerySwiper', {
+    loop: true,
+    grabCursor: true,
+    preventClicks: false,
+    preventClicksPropagation: false,
+    slideToClickedSlide: false,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        waitForTransition: true,
+    },
+    navigation: {
+        nextEl: '#gallNextBtn',
+        prevEl: '#gallPrevBtn',
+    },
+    pagination: {
+        el: '#gallPagination',
+        clickable: true,
+        dynamicBullets: true,
+    },
+    keyboard: true,
+    speed: 800,
+    spaceBetween: 0,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 1,
+        },
+    },
+});
+
+// Quantum Particles - Reduced from 50 to 15 for better performance
 const quantumBg = document.getElementById('quantumBg');
-if (quantumBg && window.innerWidth > 768) {
-    for (let i = 0; i < 30; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('quantum-particle');
-        particle.style.left = `${Math.random() * 100}%`;
-        particle.style.top = `${Math.random() * 100}%`;
-        particle.style.animationDelay = `${Math.random() * 15}s`;
-        quantumBg.appendChild(particle);
-    }
+for (let i = 0; i < 15; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('quantum-particle');
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `${Math.random() * 100}%`;
+    particle.style.animationDelay = `${Math.random() * 15}s`;
+    quantumBg.appendChild(particle);
 }
 
-// Custom Cursor
+// Custom Cursor - Optimized with RequestAnimationFrame
 const cursor = document.getElementById('cursor');
 const cursorFollower = document.getElementById('cursorFollower');
+let cursorX = 0, cursorY = 0;
+let followerX = 0, followerY = 0;
+let lightningCount = 0;
 
 document.addEventListener('mousemove', (e) => {
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
+    cursorX = e.clientX;
+    cursorY = e.clientY;
+    cursor.style.left = `${cursorX}px`;
+    cursor.style.top = `${cursorY}px`;
     
-    setTimeout(() => {
-        cursorFollower.style.left = `${e.clientX}px`;
-        cursorFollower.style.top = `${e.clientY}px`;
-    }, 100);
-
-    // Nonaktifkan lightning effect di mobile
-    if (window.innerWidth > 768 && Math.random() > 0.95) {
-        createLightning(e.clientX, e.clientY);
+    // Reduced lightning creation (only 2% chance instead of 5%)
+    if (Math.random() > 0.98 && lightningCount < 3) {
+        createLightning(cursorX, cursorY);
     }
 });
 
+// Smooth cursor follower with RequestAnimationFrame
+function animateCursorFollower() {
+    const dx = cursorX - followerX;
+    const dy = cursorY - followerY;
+    
+    followerX += dx * 0.15;
+    followerY += dy * 0.15;
+    
+    cursorFollower.style.left = `${followerX}px`;
+    cursorFollower.style.top = `${followerY}px`;
+    
+    requestAnimationFrame(animateCursorFollower);
+}
+
+animateCursorFollower();
+
 function createLightning(x, y) {
+    if (lightningCount >= 3) return; // Limit concurrent lightning effects
+    
+    lightningCount++;
     const lightning = document.createElement('div');
     lightning.classList.add('lightning');
     lightning.style.left = `${x}px`;
@@ -84,17 +124,18 @@ function createLightning(x, y) {
     
     document.body.appendChild(lightning);
 
-    setTimeout(() => {
+    requestAnimationFrame(() => {
         lightning.style.height = `${Math.random() * 50 + 20}px`;
         lightning.style.opacity = '0.8';
-        
+    });
+    
+    setTimeout(() => {
+        lightning.style.opacity = '0';
         setTimeout(() => {
-            lightning.style.opacity = '0';
-            setTimeout(() => {
-                lightning.remove();
-            }, 300);
-        }, 50);
-    }, 10);
+            lightning.remove();
+            lightningCount--;
+        }, 300);
+    }, 100);
 }
 
 // Mobile Menu
@@ -127,6 +168,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Mobile Collapse Toggle for Slide Descriptions
+document.querySelectorAll('.slide-toggle').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const description = this.closest('.slide-footer').querySelector('.slide-description');
+        
+        if (description) {
+            this.classList.toggle('expanded');
+            description.classList.toggle('expanded');
+        }
+    });
+});
+
+// Toggle Projects - Show More/Collapse
+const toggleProjectsBtn = document.getElementById('toggleProjectsBtn');
+const hiddenProjects = document.getElementById('hiddenProjects');
+let isProjectsExpanded = false;
+
+if (toggleProjectsBtn && hiddenProjects) {
+    toggleProjectsBtn.addEventListener('click', function() {
+        isProjectsExpanded = !isProjectsExpanded;
+        hiddenProjects.classList.toggle('show', isProjectsExpanded);
+        toggleProjectsBtn.classList.toggle('expanded', isProjectsExpanded);
+        
+        const buttonText = toggleProjectsBtn.querySelector('.button-text');
+        buttonText.textContent = isProjectsExpanded ? 'Show Less' : 'Show More';
+    });
+}
+
 // Section Reveal Animation
 const sections = document.querySelectorAll('.section');
 
@@ -148,7 +218,7 @@ checkScroll();
 // CV Download Function
 function downloadCV() {
     const link = document.createElement('a');
-    link.href = 'pdf/cv_haikal.pdf';
+    link.href = 'pdf/CV_Haikal_Argyo_Ramdhan_Internship.pdf';
     link.download = 'CV_HaikalArgyoRamdhan.pdf';
     document.body.appendChild(link);
     link.click();
