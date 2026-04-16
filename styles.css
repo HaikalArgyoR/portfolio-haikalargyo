@@ -74,6 +74,8 @@ body {
     border-radius: 50%;
     opacity: 0.6;
     animation: quantum-move 15s linear infinite;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 @keyframes quantum-move {
@@ -104,6 +106,7 @@ body {
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
+    will-change: transform;
 }
 
 .cursor-follower {
@@ -116,7 +119,7 @@ body {
     pointer-events: none;
     z-index: 9998;
     transform: translate(-50%, -50%);
-    transition: transform 0.3s ease;
+    will-change: transform;
 }
 
 .lightning {
@@ -205,10 +208,213 @@ body {
 .mobile-menu {
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    pointer-events: auto;
 }
 
 .mobile-menu.open {
     transform: translateX(0);
+}
+
+/* Mobile menu button styling */
+#mobileMenuButton {
+    cursor: pointer;
+    position: relative;
+    z-index: 50;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+#mobileMenuButton:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+}
+
+#mobileMenuButton:active {
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+/* Swiper Carousel Optimization */
+.swiper-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.swiper-wrapper {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.swiper-slide {
+    width: 100%;
+    flex-shrink: 0;
+    height: auto;
+    display: block;
+}
+
+/* Mobile Collapse Toggle for Slide Descriptions */
+.slide-footer {
+    position: relative;
+}
+
+.slide-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.slide-title h3 {
+    flex: 1;
+    word-break: break-word;
+}
+
+.slide-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--electric-blue);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px 8px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    min-width: 24px;
+    text-align: center;
+    line-height: 1;
+}
+
+.slide-description {
+    max-height: 500px;
+    opacity: 1;
+    overflow: visible;
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    margin-top: 8px;
+}
+
+/* Mobile specific: Hide description and show toggle */
+@media (max-width: 768px) {
+    .slide-title {
+        align-items: center;
+    }
+    
+    .slide-toggle {
+        display: block;
+        margin-top: 0;
+    }
+    
+    .slide-description {
+        max-height: 0;
+        opacity: 0;
+        margin-top: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+    
+    .slide-description.expanded {
+        max-height: 500px;
+        opacity: 1;
+        margin-top: 8px;
+        pointer-events: auto;
+        overflow: visible;
+    }
+    
+    .slide-toggle.expanded {
+        transform: rotate(180deg);
+    }
+}
+
+/* Prevent layout shift during slide animation on mobile */
+@media (max-width: 768px) {
+    .swiper-container {
+        width: 100%;
+        height: auto;
+    }
+    
+    .swiper-slide {
+        width: 100% !important;
+    }
+}
+
+/* Swiper button styling */
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto !important;
+    height: auto !important;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 255, 255, 0.15);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    font-size: 20px;
+    line-height: 1;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(0, 255, 255, 0.25);
+    border-color: rgba(0, 255, 255, 0.6);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+}
+
+.swiper-button-next::before {
+    content: '→';
+    color: var(--electric-blue);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.swiper-button-prev::before {
+    content: '←';
+    color: var(--electric-blue);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Swiper pagination */
+.swiper-pagination {
+    margin-top: 20px !important;
+    display: flex !important;
+    justify-content: center;
+    gap: 8px;
+}
+
+.swiper-pagination-bullet {
+    background-color: rgba(0, 255, 255, 0.4) !important;
+    opacity: 1 !important;
+    width: 8px !important;
+    height: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--electric-blue) !important;
+    width: 24px !important;
+    border-radius: 4px !important;
 }
 
 /* Responsive adjustments */
@@ -222,34 +428,70 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .swiper-container {
-        overflow: hidden;
-    }
-    
-    .swiper-slide {
-        transform: translateZ(0);
-        backface-visibility: hidden;
-        will-change: transform;
-    }
-    
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none !important;
-    }
-    
-    .quantum-particle {
-        display: none !important;
-    }
-    
-    .lightning {
-        display: none !important;
+/* Hidden Projects Styles */
+.hidden-projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    transition: all 0.5s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+@media (min-width: 768px) {
+    .hidden-projects {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Optimasi gambar */
-.swiper-slide img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
+@media (min-width: 1024px) {
+    .hidden-projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.hidden-projects.show {
+    max-height: 2000px;
+    opacity: 1;
+    margin-top: 2rem;
+}
+
+.hidden-project-item {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden-project-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.hidden-project-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Toggle Projects Button */
+.toggle-projects-btn {
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toggle-projects-btn i {
+    transition: transform 0.3s ease;
+}
+
+.toggle-projects-btn.expanded i {
+    transform: rotate(180deg);
 }
