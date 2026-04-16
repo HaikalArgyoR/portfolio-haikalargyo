@@ -32,6 +32,7 @@
                     <a href="#projects" class="nav-item text-white hover:text-electric-blue transition">Projects</a>
                     <a href="#skills" class="nav-item text-white hover:text-electric-blue transition">Skills</a>
                     <a href="#gallery" class="nav-item text-white hover:text-electric-blue transition">Gallery</a>
+                    <a href="#certificate" class="nav-item text-white hover:text-electric-blue transition">Certificate</a>
                     <a href="#contact" class="nav-item text-white hover:text-electric-blue transition">Contact</a>
                 </div>
                 
@@ -56,6 +57,7 @@
             <a href="#projects" class="text-white text-xl hover:text-electric-blue transition">Projects</a>
             <a href="#skills" class="text-white text-xl hover:text-electric-blue transition">Skills</a>
             <a href="#gallery" class="text-white text-xl hover:text-electric-blue transition">Gallery</a>
+            <a href="#certificate" class="text-white text-xl hover:text-electric-blue transition">Certificate</a>
             <a href="#contact" class="text-white text-xl hover:text-electric-blue transition">Contact</a>
         </div>
     </div>
@@ -63,8 +65,14 @@
     <!-- Main Content -->
     <main class="pt-24">
         <!-- Home Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center section">
-            <div class="container mx-auto px-6 py-20">
+        <section id="home" class="relative min-h-screen flex items-center justify-center section overflow-hidden">
+            <!-- Background Image Desktop with 30% Opacity -->
+            <div class="hidden md:block absolute inset-0 bg-cover bg-center opacity-20 -z-10" style="background-image: url('images/fotoo.jpg');"></div>
+            
+            <!-- Background Image Mobile with 30% Opacity -->
+            <div class="block md:hidden absolute inset-0 bg-cover bg-center opacity-20 -z-10" style="background-image: url('images/fotoo2.png');"></div>
+            
+            <div class="container mx-auto px-6 py-20 relative z-10">
                 <div class="text-center">
                     <h1 class="text-5xl md:text-7xl font-bold mb-6 neon-text">
                         <span class="text-electric-blue">Portfolio</span> <span class="text-purple"></span>
@@ -99,7 +107,7 @@
                         
                         <div class="space-y-4 text-gray-300">
                             <p>
-                                An Electrical Engineering student with high motivation and a strong foundation in control systems, microcontrollers, and data communication technology. Committed to leveraging innovative technological solutions to solve real-world problems and create an inclusive environment.
+                                An Electrical Engineering student focused on control systems, industrial automation, and robotics. Experienced in control system project development, including PID control implementation, as well as monitoring systems and data communication. Committed to applying innovative technological solutions to solve real-world problems and create a more inclusive environment. 
                             </p>
                             <p>
                                 Outside of academic activities and technical projects, I am active in various sports—especially calisthenics. I am continually driven to learn new things and broaden my skills to remain at the cutting edge of technological development.
@@ -191,38 +199,210 @@
                             <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">Pneumatic</span>
                         </div>
                     </div>
-                    
+
                     <!-- Project 4 -->
                     <div class="project-card bg-gray-900 bg-opacity-70 rounded-xl p-6">
                         <div class="text-electric-blue text-2xl mb-3">
-                            <i class="fas fa-industry"></i>
+                            <i class="fas fa-helicopter"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-white">Pneumatic Control Panel</h3>
+                        <h3 class="text-xl font-bold mb-3 text-white">Tower Copter</h3>
                         <p class="text-gray-300 mb-4">
-                            Engineered a modular control panel for industrial pneumatic systems with safety interlocks, 
-                            fault diagnostics, and touchscreen HMI interface.
+                            Tower Copter is a control systems learning prototype designed to regulate height and maintain motion stability in a controlled manner. The system is equipped with a Unity-based user interface to simplify monitoring and control. The control logic is implemented using a PID (Proportional-Integral-Derivative) controller, which continuously adjusts the motor speed based on feedback from an ultrasonic sensor to maintain the desired height and ensure stable flight.
                         </p>
-                        <div class="text-purple text-sm">
-                            <span class="bg-purple bg-opacity-20 px-2 py-1 rounded">Electro-Pneumatics</span>
-                            <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">HMI</span>
+                        <div class="text-purple text-sm"> 
+                            <span class="bg-purple bg-opacity-20 px-2 py-1 rounded">Control Systems</span>
+                            <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">Unity</span>
                         </div>
                     </div>
-                    
+
                     <!-- Project 5 -->
                     <div class="project-card bg-gray-900 bg-opacity-70 rounded-xl p-6">
                         <div class="text-electric-blue text-2xl mb-3">
-                            <i class="fas fa-laptop-code"></i>
+                            <i class="fas fa-trash-alt"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-white">Portfolio Website</h3>
+                        <h3 class="text-xl font-bold mb-3 text-white">SI UWA</h3>
                         <p class="text-gray-300 mb-4">
-                            Developed this responsive portfolio website using HTML, CSS, and JavaScript with a quantum-telecommunications 
-                            theme featuring custom animations and interactive elements.
+                            This project was developed as a competition entry for IoT Championship TELEPATI 7.0. We created a prototype of an IoT-based waste bin volume monitoring system to support more efficient waste collection routing. The project was completed in approximately two weeks by a three-member team.
                         </p>
-                        <div class="text-purple text-sm">
-                            <span class="bg-purple bg-opacity-20 px-2 py-1 rounded">Web Dev</span>
-                            <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">UI/UX</span>
+                        <div class="text-purple text-sm"> 
+                            <span class="bg-purple bg-opacity-20 px-2 py-1 rounded">IoT</span>
+                            <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">Tracking</span>
                         </div>
                     </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card bg-gray-900 bg-opacity-70 rounded-xl p-6">
+                        <div class="text-electric-blue text-2xl mb-3">
+                            <i class="fas fa-droplet"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">NeuroQua</h3>
+                        <p class="text-gray-300 mb-4">
+                            This project was developed as part of an international research innovation competition focused on sustainable technology solutions. We created NeuroQua, an IoT-based system powered by an Adaptive Neural Network and solar energy for monitoring and controlling water quality in freshwater aquaculture.
+                        </p>
+                        <div class="text-purple text-sm"> 
+                            <span class="bg-purple bg-opacity-20 px-2 py-1 rounded">IoT</span>
+                            <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">ANN</span>
+                        </div>
+                    </div>
+
+                    <!-- Hidden Projects Container -->
+                    <div id="hiddenProjects" class="hidden-projects col-span-full">
+                        <!-- Project 7 -->
+                        <div class="project-card bg-gray-900 bg-opacity-70 rounded-xl p-6 hidden-project-item">
+                            <div class="text-electric-blue text-2xl mb-3">
+                                <i class="fas fa-droplet"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-white">Biofloc Pond Water Quality Monitoring and Control System</h3>
+                            <p class="text-gray-300 mb-4">
+                                Participated in a BIMA KemDiktisaintek research project focused on developing an IoT-based water quality monitoring and control system for biofloc ponds. Developed the user interface, integrated real-time sensor data communication, and handled the wiring of the device circuitry. The system was designed over approximately one month.
+                            </p>
+                            <div class="text-purple text-sm"> 
+                                <span class="bg-purple bg-opacity-20 px-2 py-1 rounded">IoT</span>
+                                <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">Research</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 8 -->
+                        <div class="project-card bg-gray-900 bg-opacity-70 rounded-xl p-6 hidden-project-item">
+                            <div class="text-electric-blue text-2xl mb-3">
+                                <i class="fas fa-droplet"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-white">Smart Irrigation System for Stevia</h3>
+                            <p class="text-gray-300 mb-4">
+                                Participated in a BIMA KemDiktisaintek research project focused on developing an IoT-based smart irrigation system for stevia cultivation. Developed the user interface and integrated data communication to ensure stable real-time sensor monitoring and data visualization. The project was completed in approximately two weeks.
+                            </p>
+                            <div class="text-purple text-sm"> 
+                                <span class="bg-purple bg-opacity-20 px-2 py-1 rounded">IoT</span>
+                                <span class="bg-electric-blue bg-opacity-20 px-2 py-1 rounded ml-2">Research</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Toggle Button -->
+                <div class="flex justify-center mt-12">
+                    <button id="toggleProjectsBtn" class="toggle-projects-btn btn-neon px-8 py-3 rounded-full text-lg font-semibold">
+                        <span class="button-text">Show More</span>
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificate Section -->
+        <section id="certificate" class="py-20 bg-black bg-opacity-50 section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 neon-text">
+                    <span class="text-electric-blue"></span> <span class="text-purple">Certificates</span>
+                </h2>
+                
+                <div class="swiper-container" id="certificateSwiper" style="width: 100%; height: auto;">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/finalis_telepati.png" alt="Workshop" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">Finalist - Telepati 7.0 Competition</h3>
+                                    <p class="text-gray-300">Selected as a finalist in the Telepati 7.0 competition, showcasing innovative ideas in the field of technology.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/neuroqua.png" alt="Graduation" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">Participant - ERIC Competition</h3>
+                                    <p class="text-gray-300">Selected as a participant in the ERIC RIC competition, showcasing an innovative IoT-based water quality monitoring system.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/PLC_UGM.png" alt="PLC" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">PLC - Competition</h3>
+                                    <p class="text-gray-300">Participated in the PLC competition, demonstrating skills in programmable logic controllers.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/iot_pelatihan.png" alt="IoT Training" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">IoT Training</h3>
+                                    <p class="text-gray-300">Participated in an IoT training program, gaining hands-on experience with Internet of Things technologies.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/mqtt_pelatihan.png" alt="MQTT Training" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">MQTT Communication</h3>
+                                    <p class="text-gray-300">Participated in an MQTT communication training program, gaining hands-on experience with the Message Queuing Telemetry Transport protocol.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 6 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/sertif_JS.png" alt="JavaScript Training Certification" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">JavaScript Training - Codepolitan</h3>
+                                    <p class="text-gray-300">Completed a JavaScript training program, gaining proficiency in the language and its applications.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 7 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/sertif_HTML.png" alt="Basic HTML Training Certification" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">Basic HTML Training - Codepolitan</h3>
+                                    <p class="text-gray-300">Completed a basic HTML training program, gaining foundational knowledge in web development.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 8 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/sertif_CSS.png" alt="Basic CSS Training Certification" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">Basic CSS Training - Codepolitan</h3>
+                                    <p class="text-gray-300">Completed a basic CSS training program, gaining foundational knowledge in web development.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next text-electric-blue" id="certNextBtn"></div>
+                    <div class="swiper-button-prev text-electric-blue" id="certPrevBtn"></div>
+                    
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination" id="certPagination"></div>
                 </div>
             </div>
         </section>
@@ -246,7 +426,7 @@
                             
                             <div class="flex items-center">
                                 <i class="fas fa-industry text-electric-blue mr-3"></i>
-                                <span class="text-gray-300">Omron PLC</span>
+                                <span class="text-gray-300">PLC Development</span>
                             </div>
                             
                             <div class="flex items-center">
@@ -261,7 +441,7 @@
                             
                             <div class="flex items-center">
                                 <i class="fas fa-code text-electric-blue mr-3"></i>
-                                <span class="text-gray-300">Web Development (HTML, CSS, JavaScript)</span>
+                                <span class="text-gray-300">IoT Development</span>
                             </div>
                             
                             <div class="flex items-center">
@@ -319,8 +499,8 @@
                                         Robotics
                                     </li>
                                     <li class="flex items-center">
-                                        <i class="fas fa-bolt text-purple mr-2"></i>
-                                        Electric Vehicles
+                                        <i class="fas fa-cogs text-purple mr-2"></i>
+                                        Automation
                                     </li>
                                     <li class="flex items-center">
                                         <i class="fas fa-running text-purple mr-2"></i>
@@ -345,13 +525,13 @@
                     <span class="text-electric-blue"></span> <span class="text-purple">Gallery</span>
                 </h2>
                 
-                <div class="swiper-container">
+                <div class="swiper-container" id="gallerySwiper" style="width: 100%; height: auto;">
                     <div class="swiper-wrapper">
                         <!-- Slide 1 -->
                         <div class="swiper-slide">
                             <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
-                                <img src="images/gambar1.jpeg" alt="Workshop" class="w-full h-full object-cover" loading="lazy">
+                                <img src="images/gambar1.jpeg" alt="Workshop" class="w-full h-full object-contain">
                                 <div class="absolute bottom-0 left-0 p-6 text-white">
                                     <h3 class="text-xl font-bold">Sports Activity</h3>
                                     <p class="text-gray-300">Staying active and maintaining work-life balance</p>
@@ -363,7 +543,7 @@
                         <div class="swiper-slide">
                             <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
-                                <img src="images/gambar2.jpeg" alt="Graduation" class="w-full h-full object-cover" loading="lazy">
+                                <img src="images/gambar2.jpeg" alt="Graduation" class="w-full h-full object-contain">
                                 <div class="absolute bottom-0 left-0 p-6 text-white">
                                     <h3 class="text-xl font-bold">FiMa23</h3>
                                     <p class="text-gray-300">The process of creating FiMa23 together with the team</p>
@@ -375,7 +555,7 @@
                         <div class="swiper-slide">
                             <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
-                                <img src="images/gambar3.jpeg" alt="Team" class="w-full h-full object-cover" loading="lazy">
+                                <img src="images/gambar3.jpeg" alt="Team" class="w-full h-full object-contain">
                                 <div class="absolute bottom-0 left-0 p-6 text-white">
                                     <h3 class="text-xl font-bold">Team Workshop</h3>
                                     <p class="text-gray-300">Collaborating with team members on a new project</p>
@@ -387,21 +567,165 @@
                         <div class="swiper-slide">
                             <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
-                                <img src="images/gambar4.jpeg" alt="Presentation" class="w-full h-full object-cover" loading="lazy">
+                                <img src="images/foto_presentasi2.jpeg" alt="Presentation" class="w-full h-full object-contain">
                                 <div class="absolute bottom-0 left-0 p-6 text-white">
                                     <h3 class="text-xl font-bold">Project Presentation</h3>
                                     <p class="text-gray-300">Demonstrated a vibration detection device at the ELCO (Electrical Control) community orientation event.</p>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Slide 5 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/presntasi_SI UWA.jpg" alt="Presentation" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">SI UWA</h3>
+                                    <p class="text-gray-300">Presented a project at the SI UWA in IoT competition telepati 7.0 event.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 6 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/presentasi2_SI UWA.jpg" alt="Presentation" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">SI UWA</h3>
+                                    <p class="text-gray-300">Presented a project at the SI UWA in IoT competition telepati 7.0 event.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 7 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/Prototype SI UWA.jpg" alt="Prototype" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">SI UWA</h3>
+                                    <p class="text-gray-300">Showcased a prototype at the SI UWA in IoT competition telepati 7.0 event.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 8 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/SESI_FOTBAR_SI UWA.JPG" alt="Event Photo" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">SI UWA</h3>
+                                    <p class="text-gray-300">Attended the SI UWA IoT competition telepati 7.0 event.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 9 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/UI_bioflok.jpeg" alt="UI Design" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">UI Biofloc IoT</h3>
+                                    <p class="text-gray-300">Designed the user interface for the Biofloc application.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 10 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/persiapan_stan_SI UWA.jpg" alt="Preparation" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">Prepared Stan SI UWA</h3>
+                                    <p class="text-gray-300">Prepared the stand for the SI UWA IoT competition.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 11 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/HMI_PLC.jpg" alt="HMI PLC" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">HMI PLC Integration</h3>
+                                    <p class="text-gray-300">Integrated the HMI with the PLC OMRON.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 12 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/nelitas.jpeg" alt="Teaching Robotics" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">Teaching robotics in junior high school</h3>
+                                    <p class="text-gray-300">Shared knowledge and skills with students in an engaging way.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 13 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/UI_Tower.jpeg" alt="UI TC" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">Tower Copter</h3>
+                                    <p class="text-gray-300">User Interface Tower Copter</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 14 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/ECOBOOST.jpg" alt="UI TC" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">ECOBOOST</h3>
+                                    <p class="text-gray-300">The process of creating ecoboost systems</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 15 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/monarlis.jpg" alt="Monarlis" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">Monarlis</h3>
+                                    <p class="text-gray-300">the process of creating Monarlis project</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 16 -->
+                        <div class="swiper-slide">
+                            <div class="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                                <img src="images/UI_irigasi.jpeg" alt="UI Irigasi" class="w-full h-full object-contain">
+                                <div class="absolute bottom-0 left-0 p-6 text-white">
+                                    <h3 class="text-xl font-bold">UI Irigasi</h3>
+                                    <p class="text-gray-300">User Interface for Irrigation System</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Add Navigation -->
-                    <div class="swiper-button-next text-electric-blue"></div>
-                    <div class="swiper-button-prev text-electric-blue"></div>
+                    <div class="swiper-button-next text-electric-blue" id="gallNextBtn"></div>
+                    <div class="swiper-button-prev text-electric-blue" id="gallPrevBtn"></div>
                     
                     <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination" id="gallPagination"></div>
                 </div>
             </div>
         </section>
